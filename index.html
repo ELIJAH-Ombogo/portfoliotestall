@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elijah Ombogo (Glen Tech) - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #ff4757;
+      --bg: #0f0f0f;
+      --text: #f1f1f1;
+      --card-bg: #1c1c1c;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      animation: fadeInDown 1s ease;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav button {
+      background: var(--card-bg);
+      color: var(--text);
+      border: none;
+      margin: 0.3rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 0.9rem;
+    }
+    nav button:hover {
+      background: var(--primary);
+      transform: scale(1.05);
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: none;
+      animation: fadeIn 0.8s ease;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+    .photo-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .photo-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .contact-icons a {
+      color: var(--text);
+      font-size: 1.8rem;
+      margin: 0.5rem;
+      transition: 0.3s;
+    }
+    .contact-icons a:hover {
+      color: var(--primary);
+      transform: scale(1.2);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+  <canvas></canvas>
+  <header>
+    <h1>Elijah Ombogo (Glen Tech)</h1>
+    <nav>
+      <button onclick="showSection('about')">About</button>
+      <button onclick="showSection('photos')">Glen Photos</button>
+      <button onclick="showSection('contact')">Contact</button>
+      <button onclick="showSection('info')">Added Information</button>
+      <a href="Elijah_Ombogo_CV.pdf" download>
+        <button>Download CV</button>
+      </a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="active">
+    <h2>About Me</h2>
+    <p>Dedicated and creative website designer with 13 months of experience in delivering high-quality projects. 
+    Currently studying at Kenya Highlands University. Proficient in Microsoft Office, web design, and GitHub projects. 
+    Strong soft skills in time management and teamwork.</p>
+    <br>
+    <p><strong>Work Experience:</strong> 13 months | 11 successful projects</p>
+    <p><strong>Education:</strong> Pursuing Degree | KCSE Certificate (2023)</p>
+    <p><strong>Skills:</strong> Microsoft Office, Web Design & Development, GitHub</p>
+  </section>
+
+  <!-- Photos Section -->
+  <section id="photos">
+    <h2>Glen Photos 📸</h2>
+    <div class="photo-gallery">
+      <img src="https://files.catbox.moe/7k1bia.jpg" alt="">
+      <img src="https://files.catbox.moe/1jff66.jpg" alt="">
+      <img src="https://files.catbox.moe/123fl0.jpg" alt="">
+      <img src="https://files.catbox.moe/344j1t.jpg" alt="">
+      <img src="https://files.catbox.moe/q9uy1a.jpg" alt="">
+      <img src="https://files.catbox.moe/6hrjb9.jpg" alt="">
+      <img src="https://files.catbox.moe/et5utb.jpg" alt="">
+      <img src="https://files.catbox.moe/hwqojk.jpg" alt="">
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me 📞</h2>
+    <p>Phone: +254 104 882 369 / +254 723 429 627</p>
+    <div class="contact-icons">
+      <a href="https://www.facebook.com/glenred" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/g.l.e.n_r.e.d?igsh=MXB0dngxbDJxemJzag==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/254104882369" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:+254720254797"><i class="fas fa-phone"></i></a>
+    </div>
+  </section>
+
+  <!-- Added Information -->
+  <section id="info">
+    <h2>Added Information 🧾</h2>
+    <p>
+      <a href="https://whatsapp.com/channel/0029Vb6cfYr1Hspv5Das1m1X" target="_blank">
+        <i class="fab fa-whatsapp"></i> Join my WhatsApp Channel
+      </a>
+    </p>
+    <p>
+      <a href="https://play-lz2m.onrender.com/" target="_blank">
+        <i class="fas fa-download"></i> Music Download Website
+      </a>
+    </p>
+    <p>
+      <a href="https://github.com/ELIJAH-Ombogo" target="_blank">
+        <i class="fab fa-github"></i> Follow me on GitHub
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Elijah Ombogo (Glen Tech). All Rights Reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+  <!-- Background Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+  <script>
+    'use strict';
+    const { PI: n } = Math;
+    let x, y, r, t;
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      stroke(255, 50, 50);
+      strokeWeight(2);
+      r = min(width, height) / 32;
+    }
+
+    function draw() {
+      background(50, 5);
+      translate(width / 2, height / 2);
+      rotate(n);
+      t = frameCount / 180;
+      x = r * 16 * pow(sin(t), 3);
+      y = r * (13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t));
+      line(0, 0, x, y);
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>
