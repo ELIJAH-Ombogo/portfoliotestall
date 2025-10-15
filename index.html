@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elijah Ombogo | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background: linear-gradient(to right, #141e30, #243b55);
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #ff5050;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 20px;
+      background: rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    nav button {
+      background: #ff5050;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #ff2a2a;
+      transform: scale(1.05);
+    }
+
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      border-radius: 15px;
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.8rem;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #ff5050;
+      transform: scale(1.2);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-item i {
+      margin-right: 10px;
+      font-size: 1.5rem;
+      color: #ff5050;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.4);
+      color: #aaa;
+      position: relative;
+      z-index: 2;
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ELIJAH OMBOGO</h1>
+    <p>Website Designer | Student at Kenya Highlands University</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('contact')"><i class="fa-solid fa-phone"></i> Contact</button>
+    <button onclick="showSection('photos')"><i class="fa-solid fa-images"></i> Glen Photos</button>
+    <button onclick="showSection('about')"><i class="fa-solid fa-user"></i> About</button>
+    <button onclick="showSection('added')"><i class="fa-solid fa-circle-info"></i> Added Information</button>
+    <button onclick="downloadCV()"><i class="fa-solid fa-download"></i> Download CV</button>
+  </nav>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Information</h2>
+    <div class="contact-item"><i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/glenred" target="_blank">Facebook</a></div>
+    <div class="contact-item"><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/g.l.e.n_r.e.d?igsh=MXB0dngxbDJxemJzag==" target="_blank">Instagram</a></div>
+    <div class="contact-item"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/254104882369" target="_blank">WhatsApp</a></div>
+    <div class="contact-item"><i class="fa-solid fa-phone"></i> <a href="tel:+254720254797">+254 720 254 797</a></div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section id="photos">
+    <h2>Glen Photos</h2>
+    <div class="gallery">
+      <img src="https://files.catbox.moe/7k1bia.jpg" alt="photo1">
+      <img src="https://files.catbox.moe/1jff66.jpg" alt="photo2">
+      <img src="https://files.catbox.moe/123fl0.jpg" alt="photo3">
+      <img src="https://files.catbox.moe/344j1t.jpg" alt="photo4">
+      <img src="https://files.catbox.moe/q9uy1a.jpg" alt="photo5">
+      <img src="https://files.catbox.moe/6hrjb9.jpg" alt="photo6">
+      <img src="https://files.catbox.moe/et5utb.jpg" alt="photo7">
+      <img src="https://files.catbox.moe/hwqojk.jpg" alt="photo8">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Dedicated and creative website designer with 13 months of experience in delivering high-quality projects. 
+      Currently studying at Kenya Highlands University. 
+      Proficient in Microsoft Office, web design, and GitHub projects. 
+      Strong soft skills in time management and teamwork.
+    </p>
+  </section>
+
+  <!-- ADDED INFO -->
+  <section id="added">
+    <h2>Added Information</h2>
+    <div class="contact-item"><i class="fa-brands fa-whatsapp"></i> <a href="https://whatsapp.com/channel/0029Vb6cfYr1Hspv5Das1m1X" target="_blank">Join my WhatsApp Channel</a></div>
+    <div class="contact-item"><i class="fa-solid fa-download"></i> <a href="https://play-lz2m.onrender.com/" target="_blank">Music Download Website</a></div>
+    <div class="contact-item"><i class="fa-brands fa-github"></i> <a href="https://github.com/ELIJAH-Ombogo" target="_blank">Follow Me on GitHub</a></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Elijah Ombogo (Glen Tech) | Designed with ❤️</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function downloadCV() {
+      // Replace with your actual CV file URL or link to Google Drive
+      window.open('your-cv-link.pdf', '_blank');
+    }
+  </script>
+
+  <!-- Animation Code -->
+  <script>
+  'use strict';
+
+  const { PI: n } = Math;
+  let x, y, r, t;
+
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+    stroke(255, 50, 50);
+    strokeWeight(2);
+    r = min(width, height) / 32;
+  }
+
+  function draw() {
+    background(50, 5);
+    translate(width / 2, height / 2);
+    rotate(n);
+    t = frameCount / 180;
+    x = r * 16 * pow(sin(t), 3);
+    y = r * (13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t));
+    line(0, 0, x, y);
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    r = min(width, height) / 32;
+  }
+  </script>
+</body>
+</html>
