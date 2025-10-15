@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elijah Ombogo | Glen Tech Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      text-align: center;
+}
+    header {
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+}
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+}
+.btn {
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background-color: #ff4b2b;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+}
+.btn:hover {
+      background-color: #ff416c;
+}
+    section {
+      margin: 2rem auto;
+      max-width: 800px;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 10px;
+}
+.icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+}
+.gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+}
+.gallery img:hover {
+      transform: scale(1.05);
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Elijah Ombogo</h1>
+    <p>Website Designer | Glen Tech</p>
+  </header>
+
+  <section>
+    <button class="btn" onclick="showContact()">Contact Info</button>
+    <button class="btn" onclick="showAbout()">About</button>
+    <button class="btn" onclick="showPhotos()">Glen Photos</button>
+    <button class="btn" onclick="showAdded()">Added Information</button>
+    <button class="btn" onclick="downloadCV()">Download CV</button>
+  </section>
+
+  <section id="content"></section>
+
+  <script>
+    function showContact() {
+      document.getElementById('content').innerHTML = `
+        <h2>Contact Me</h2>
+        <p>Phone: +254 104 882 369 / +254 723 429 627</p>
+        <div class="icons">
+          <a href="https://www.facebook.com/glenred" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/g.l.e.n_r.e.d?igsh=MXB0dngxbDJxemJzag==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/254104882369" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="tel:+254720254797"><i class="fas fa-phone"></i></a>
+        </div>
+      `;
+}
+
+    function showAbout() {
+      document.getElementById('content').innerHTML = `
+        <h2>About Me</h2>
+        <p>Dedicated and creative website designer with 13 months of experience in delivering high-quality projects. Currently studying at Kenya Highlands University. Proficient in Microsoft Office, web design, and GitHub projects. Strong soft skills in time management and teamwork.</p>
+      `;
+}
+
+    function showPhotos() {
+      document.getElementById('content').innerHTML = `
+        <h2>Glen Photos</h2>
+        <div class="gallery">
+          <img src="https://files.catbox.moe/7k1bia.jpg" />
+          <img src="https://files.catbox.moe/1jff66.jpg" />
+          <img src="https://files.catbox.moe/123fl0.jpg" />
+          <img src="https://files.catbox.moe/344j1t.jpg" />
+          <img src="https://files.catbox.moe/q9uy1a.jpg" />
+          <img src="https://files.catbox.moe/6hrjb9.jpg" />
+          <img src="https://files.catbox.moe/et5utb.jpg" />
+          <img src="https://files.catbox.moe/hwqojk.jpg" />
+        </div>
+      `;
+}
+
+    function showAdded() {
+      document.getElementById('content').innerHTML = `
+        <h2>Added Information</h2>
+<p>Join my WhatsApp channel for more info: <a href="https://whatsapp.com/channel/0029Vb6cfYr1Hspv5Das1m1X" target="_blank"><i class="fab fa-whatsapp"></i></a></p>
+        <p>Music Download Site: <a href="https://play-lz2m.onrender.com/" target="_blank"><i class="fas fa-download"></i></a></p>
+        <p>Follow Me on GitHub: <a href="https://github.com/ELIJAH-Ombogo" target="_blank"><i class="fab fa-github"></i></a></p>
+      `;
+}
+
+    function downloadCV() {
+      alert("CV download feature is currently not available in this preview.");
+}
+  </script>
+
+  <!-- Animation Canvas -->
+  <canvas id="animationCanvas"></canvas>
+  <script>
+    'use strict';
+    const { PI: n} = Math;
+    let x, y, r, t;
+
+    function setup() {
+      const canvas = document.getElementById('animationCanvas');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+      r = Math.min(canvas.width, canvas.height) / 32;
+
+      function draw() {
+        ctx.fillStyle = 'rgba(50, 5, 5, 0.1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(n);
+        t = performance.now() / 1000;
+        x = r * 16 * Math.pow(Math.sin(t), 3);
+        y = -r * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+        ctx.strokeStyle = 'rgb(255, 50, 50)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.restore();
+        requestAnimationFrame(draw);
+}
+      draw();
+}
+
+    window.onload = setup;
+  </script>
+</body>
+</html>
