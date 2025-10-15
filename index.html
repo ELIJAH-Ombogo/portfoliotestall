@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elijah Ombogo | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://kit.fontawesome.com/a2e0e9f0c2.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+    .section-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: 0.3s;
+    }
+    .section-card:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    .btn {
+      background: #2563eb;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #1e40af;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Canvas -->
+  <div class="overlay">
+    <canvas id="defaultCanvas0"></canvas>
+  </div>
+
+  <!-- HEADER -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold text-blue-400">ELIJAH OMBOGO</h1>
+    <p class="text-gray-300 italic">(Glen Tech)</p>
+    <p class="mt-2 text-gray-400">"I'm a motivated and creative individual who balances work and studies while actively participating in church activities."</p>
+    <div class="mt-5 flex justify-center gap-4 flex-wrap">
+      <button class="btn" onclick="showSection('about')">About</button>
+      <button class="btn" onclick="showSection('photos')">GLEN PHOTOS</button>
+      <button class="btn" onclick="showSection('contact')">Contact Info</button>
+      <button class="btn" onclick="showSection('added')">Added Information</button>
+      <a href="Elijah_Ombogo_CV.pdf" download class="btn flex items-center gap-2">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="max-w-3xl mx-auto mb-10 hidden section-card">
+    <h2 class="text-2xl font-semibold text-blue-400 mb-3">About Me</h2>
+    <p>
+      Dedicated and creative website designer with 13 months of experience in delivering high-quality projects.
+      Currently studying at Kenya Highlands University. Proficient in Microsoft Office, web design, and GitHub projects.
+      Strong soft skills in time management and teamwork.
+    </p>
+    <div class="mt-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div><strong>13</strong><br>Months Experience</div>
+      <div><strong>11</strong><br>Successful Projects</div>
+    </div>
+    <div class="mt-5">
+      <h3 class="font-bold text-lg mb-2">Work Experience</h3>
+      <ul class="list-disc ml-5">
+        <li>Website Designer (13 months)</li>
+        <li>Completed 11 successful projects</li>
+        <li>Developed and maintained websites for clients</li>
+        <li>Demonstrated expertise in web design and development</li>
+      </ul>
+    </div>
+    <div class="mt-5">
+      <h3 class="font-bold text-lg mb-2">Education</h3>
+      <p>Pursuing a degree — Kenya Highlands University (Current Student)</p>
+      <p>KCSE Certificate — 2023</p>
+    </div>
+    <div class="mt-5">
+      <h3 class="font-bold text-lg mb-2">Skills</h3>
+      <p><strong>Technical:</strong> Microsoft Office, Web Design & Development, GitHub Projects</p>
+      <p><strong>Soft Skills:</strong> Time Management, Teamwork</p>
+    </div>
+  </section>
+
+  <!-- PHOTOS SECTION -->
+  <section id="photos" class="max-w-5xl mx-auto mb-10 hidden section-card">
+    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Glen Photos</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="https://files.catbox.moe/7k1bia.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/1jff66.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/123fl0.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/344j1t.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/q9uy1a.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/6hrjb9.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/et5utb.jpg" class="rounded-lg shadow-lg"/>
+      <img src="https://files.catbox.moe/hwqojk.jpg" class="rounded-lg shadow-lg"/>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="max-w-3xl mx-auto mb-10 hidden section-card text-center">
+    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Contact Information</h2>
+    <div class="flex justify-center gap-6 flex-wrap text-2xl">
+      <a href="https://www.facebook.com/glenred" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/g.l.e.n_r.e.d?igsh=MXB0dngxbDJxemJzag==" target="_blank" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/254104882369" target="_blank" class="hover:text-green-500"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:+254720254797" class="hover:text-yellow-400"><i class="fas fa-phone"></i></a>
+    </div>
+    <p class="mt-4">Phone: +254 104 882 369 / +254 723 429 627</p>
+  </section>
+
+  <!-- ADDED INFORMATION SECTION -->
+  <section id="added" class="max-w-3xl mx-auto mb-10 hidden section-card">
+    <h2 class="text-2xl font-semibold text-blue-400 mb-3">Added Information</h2>
+    <ul class="space-y-3">
+      <li>
+        <i class="fab fa-whatsapp text-green-500"></i>
+        <a href="https://whatsapp.com/channel/0029Vb6cfYr1Hspv5Das1m1X" target="_blank" class="underline ml-2">Join my WhatsApp channel</a>
+      </li>
+      <li>
+        <i class="fas fa-download text-blue-500"></i>
+        <a href="https://play-lz2m.onrender.com/" target="_blank" class="underline ml-2">Music Download Website</a>
+      </li>
+      <li>
+        <i class="fab fa-github text-gray-300"></i>
+        <a href="https://github.com/ELIJAH-Ombogo" target="_blank" class="underline ml-2">Follow Me on GitHub</a>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    © 2025 Elijah Ombogo (Glen Tech). References available upon request.
+  </footer>
+
+  <script>
+    // Section Switcher
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    // p5.js Heart Animation
+    'use strict';
+    const { PI: n } = Math;
+    let x, y, r, t;
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      stroke(255, 50, 50);
+      strokeWeight(2);
+      r = min(width, height) / 32;
+    }
+    function draw() {
+      background(15, 23, 42, 5);
+      translate(width / 2, height / 2);
+      rotate(n);
+      t = frameCount / 180;
+      x = r * 16 * pow(sin(t), 3);
+      y = -r * (13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * t) - cos(4 * t));
+      line(0, 0, x, y);
+    }
+    window.onresize = () => resizeCanvas(windowWidth, windowHeight);
+  </script>
+
+</body>
+</html>
